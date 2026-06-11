@@ -1,0 +1,191 @@
+/* MAIN */
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Google Sans'; */
+    font-family: 'Montserrat';
+}
+html{
+    font-size: 12px;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    animation: theme 21s linear infinite;
+    &:after,
+    &:before{
+        content: '';
+        display: block;
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        width: 100vmax;
+        height: 100vmax;
+        background: rgba(0,0,0,0.25);
+        animation: background 90s linear infinite;
+    }
+    &:after{
+        left: 15vw;
+    }
+    &:before{
+        right: 15vw;
+        animation-delay: -30s;
+        animation-direction: reverse;
+    }
+}
+@keyframes theme{
+    0%{ background: #1B3B2E; }
+    16%{ background: #1A4A4E; }
+    33%{ background: #1A5A6E; }
+    50%{ background: #164B6A; }
+    66%{ background: #8B2A3A; }
+    83%{ background: #9A3B2E; }
+    100%{ background: #1B3B2E; }
+}
+@keyframes background{
+    0%{ transform: rotate(0deg); }
+    100%{ transform: rotate(360deg); }
+}
+/* start z-index control */
+.toast-container,
+.toast,
+.toast-body{ z-index: 9999 !important; }
+.spinner{ z-index: 9998 !important; }
+.swal2-container{ z-index: 9997 !important; }
+.popover{ z-index: 9996 !important; }
+.modal{ z-index: 9995 !important; }
+.modal-backdrop{ z-index: 9994 !important; }
+.offcanvas{ z-index: 9993 !important; }
+#sidebar{ z-index: 9992 !important; }
+#navbar{ z-index: 9991 !important; }
+.datepicker-range0,
+.datepicker0{ z-index: 9000 !important; }
+/* end z-index control */
+.spinner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10;
+    background: rgba(255, 255, 255, 0.5);
+}
+.flex0{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 10px;
+}
+.flex1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+@media(max-width: 768px){
+    .flex0{
+        flex-direction: column;
+    }
+    .flex1{
+        flex-direction: column;
+        align-items: start;
+    }
+}
+.btns0{
+    text-align: end;
+}
+.trth0{
+    color: var(--bs-secondary);
+    font-size: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: var(--bs-light);
+}
+.to-view input,
+.to-view select,
+.to-view textarea,
+.input-view{
+    pointer-events: none;
+    user-select: none;
+    background: white;
+    color: black;
+    border: none;
+}
+::placeholder{
+    font-style: italic;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number]{
+    -moz-appearance: textfield;
+}
+/* BOOTSTRAP */
+.input-group{
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+}
+.input-group .input-group-text{
+    background: var(--bs-body-bg);
+}
+.input-group .input-group-text,
+.input-group .form-control,
+.input-group .form-select{
+    border: none;
+}
+.input-group .form-control.is-invalid,
+.input-group .form-select.is-invalid{
+    border: var(--bs-border-width) solid var(--bs-form-invalid-border-color);
+}
+.nav-tabs{
+    background: var(--bs-light);
+    margin: 0;
+    padding-top: 10px;
+    padding-inline: 10px;
+    border-top-left-radius: var(--bs-border-radius);
+    border-top-right-radius: var(--bs-border-radius);
+}
+.tab-content .tab-pane .card{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.card{
+    border: none;
+}
+.btn{
+    white-space: nowrap;
+}
+/* DATEPICKER */
+/* ======================== Datepicker */
+.datepicker th,
+.datepicker td{
+    padding: 6px 12px !important;
+}
+.datepicker-inline,
+.datepicker.datepicker-inline,
+.datepicker.datepicker-inline table{
+    width: 100% !important;
+}
+/* DATATABLE */
+.dt-container .table-responsive{
+    min-height: 350px;
+}
+/* SIZES */
+.w5px{ width: 5px !important; }.w10px{ width: 10px !important; }.w15px{ width: 15px !important; }.w20px{ width: 20px !important; }.w25px{ width: 25px !important; }.w30px{ width: 30px !important; }.w35px{ width: 35px !important; }.w40px{ width: 40px !important; }.w45px{ width: 45px !important; }.w50px{	width: 50px !important; }.w100px{ width: 100px !important; }.w150px{ width: 150px !important; }.w200px{ width: 200px !important; }.w250px{ width: 250px !important; }.w300px{ width: 300px !important; }.w350px{ width: 350px !important; }.w400px{ width: 400px !important; }.w450px{ width: 450px !important; }.w500px{ width: 500px !important; }.w550px{ width: 550px !important; }.w600px{ width: 600px !important; }.w650px{ width: 650px !important; }.w700px{ width: 700px !important; }.w750px{ width: 750px !important; }.w800px{ width: 800px !important; }.w850px{ width: 850px !important; }.w900px{ width: 900px !important; }.w950px{ width: 950px !important; }.w1000px{ width: 1000px !important; }
+.max-w50px{ max-width: 50px !important; }.max-w100px{ max-width: 100px !important; }.max-w150px{ max-width: 150px !important; }.max-w200px{ max-width: 200px !important; }.max-w250px{ max-width: 250px !important; }.max-w300px{ max-width: 300px !important; }.max-w350px{ max-width: 350px !important; }.max-w400px{ max-width: 400px !important; }.max-w450px{ max-width: 450px !important; }.max-w500px{ max-width: 500px !important; }.max-w550px{ max-width: 550px !important; }.max-w600px{ max-width: 600px !important; }.max-w650px{ max-width: 650px !important; }.max-w700px{ max-width: 700px !important; }.max-w750px{ max-width: 750px !important; }.max-w800px{ max-width: 800px !important; }.max-w850px{ max-width: 850px !important; }.max-w900px{ max-width: 900px !important; }.max-w950px{ max-width: 950px !important; }.max-w1000px{ max-width: 1000px !important; }
+.min-w50px{ min-width: 50px !important; }.min-w100px{ min-width: 100px !important; }.min-w150px{ min-width: 150px !important; }.min-w200px{ min-width: 200px !important; }.min-w250px{ min-width: 250px !important; }.min-w300px{ min-width: 300px !important; }.min-w350px{ min-width: 350px !important; }.min-w400px{ min-width: 400px !important; }.min-w450px{ min-width: 450px !important; }.min-w500px{ min-width: 500px !important; }.min-w550px{ min-width: 550px !important; }.min-w600px{ min-width: 600px !important; }.min-w650px{ min-width: 650px !important; }.min-w700px{ min-width: 700px !important; }.min-w750px{ min-width: 750px !important; }.min-w800px{ min-width: 800px !important; }.min-w850px{ min-width: 850px !important; }.min-w900px{ min-width: 900px !important; }.min-w950px{ min-width: 950px !important; }.min-w1000px{ min-width: 1000px !important; }
+.h5px{ height: 5px !important; }.h10px{ height: 10px !important; }.h15px{ height: 15px !important; }.h20px{ height: 20px !important; }.h25px{ height: 25px !important; }.h30px{ height: 30px !important; }.h35px{ height: 35px !important; }.h40px{ height: 40px !important; }.h45px{ height: 45px !important; }.h50px{ height: 50px !important; }.h100px{ height: 100px !important; }.h150px{ height: 150px !important; }.h200px{ height: 200px !important; }.h250px{ height: 250px !important; }.h300px{ height: 300px !important; }.h350px{ height: 350px !important; }.h400px{ height: 400px !important; }.h450px{ height: 450px !important; }.h500px{ height: 500px !important; }.h550px{ height: 550px !important; }.h600px{ height: 600px !important; }.h650px{ height: 650px !important; }.h700px{ height: 700px !important; }.h750px{ height: 750px !important; }.h800px{ height: 800px !important; }.h850px{ height: 850px !important; }.h900px{ height: 900px !important; }.h950px{ height: 950px !important; }.h1000px{ height: 1000px !important; }
+.max-h50px{ max-height: 50px !important; }.max-h100px{ max-height: 100px !important; }.max-h150px{ max-height: 150px !important; }.max-h200px{ max-height: 200px !important; }.max-h250px{ max-height: 250px !important; }.max-h300px{ max-height: 300px !important; }.max-h350px{ max-height: 350px !important; }.max-h400px{ max-height: 400px !important; }.max-h450px{ max-height: 450px !important; }.max-h500px{ max-height: 500px !important; }.max-h550px{ max-height: 550px !important; }.max-h600px{ max-height: 600px !important; }.max-h650px{ max-height: 650px !important; }.max-h700px{ max-height: 700px !important; }.max-h750px{ max-height: 750px !important; }.max-h800px{ max-height: 800px !important; }.max-h850px{ max-height: 850px !important; }.max-h900px{ max-height: 900px !important; }.max-h950px{ max-height: 950px !important; }.max-h1000px{ max-height: 1000px !important; }
+.min-h50px{ min-height: 50px !important; }.min-h100px{ min-height: 100px !important; }.min-h150px{ min-height: 150px !important; }.min-h200px{ min-height: 200px !important; }.min-h250px{ min-height: 250px !important; }.min-h300px{ min-height: 300px !important; }.min-h350px{ min-height: 350px !important; }.min-h400px{ min-height: 400px !important; }.min-h450px{ min-height: 450px !important; }.min-h500px{ min-height: 500px !important; }.min-h550px{ min-height: 550px !important; }.min-h600px{ min-height: 600px !important; }.min-h650px{ min-height: 650px !important; }.min-h700px{ min-height: 700px !important; }.min-h750px{ min-height: 750px !important; }.min-h800px{ min-height: 800px !important; }.min-h850px{ min-height: 850px !important; }.min-h900px{ min-height: 900px !important; }.min-h950px{ min-height: 950px !important; }.min-h1000px{ min-height: 1000px !important; }
